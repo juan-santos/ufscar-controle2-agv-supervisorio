@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { LoginInterface } from '../../interfaces/login.interface';
 import { ProjectCustomizationService } from '../../services/project-customization.service';
 
 @Component({
@@ -6,17 +8,41 @@ import { ProjectCustomizationService } from '../../services/project-customizatio
     templateUrl: './login.component.html',
     styleUrls: ['./login.component.scss'],
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
+
+  public formCliente: FormGroup = this.formBuilder.group({
+    email: [null, Validators.required],
+    password: [null, Validators.required],
+  })
 
   /**
    *  Construtor do componente LoginComponent
    * @param projectCustomizationService Serviço responsável por armazenar informações customizáveis do site
    */
-  constructor(private readonly projectCustomizationService: ProjectCustomizationService){
+  constructor(
+    private readonly projectCustomizationService: ProjectCustomizationService,
+    private readonly formBuilder: FormBuilder,
+    ){
+  }
+
+  public ngOnInit(): void {
+    this.createForm();
+  }
+
+  private createForm() : void {
+    this.formCliente = this.formBuilder.group({
+      email: [null, Validators.required],
+      password: [null, Validators.required],
+    })
   }
 
   public get projectCustomization (): ProjectCustomizationService {
     return this.projectCustomizationService;
+  }
+
+  public login(): void {
+    const objLogin = this.formCliente.value as LoginInterface;
+    console.log(objLogin);
   }
 
 }

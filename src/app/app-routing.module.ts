@@ -1,18 +1,19 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ProjectRoutes } from './features/enum/routes.enum';
 
 const routes: Routes = [
     {
         path: '',
-        redirectTo: 'login',
+        redirectTo: ProjectRoutes.LOGIN,
         pathMatch: 'full',
     },
     {
-        path: 'login',
+        path: ProjectRoutes.LOGIN,
         loadChildren: () => import('./features/components/login/login.module').then((m) => m.LoginModule),
     },
     {
-        path: 'home',
+        path: ProjectRoutes.HOME,
         loadChildren: () => import('./features/components/home/home.module').then((m) => m.HomeModule),
     },
 ];

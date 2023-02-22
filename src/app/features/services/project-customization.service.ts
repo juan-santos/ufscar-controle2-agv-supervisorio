@@ -14,6 +14,6 @@ export class ProjectCustomizationService {
   }
 
   public get prymaryColor(): string {
-    return '#000';
+    return '#F3F3F3';
   }
 }

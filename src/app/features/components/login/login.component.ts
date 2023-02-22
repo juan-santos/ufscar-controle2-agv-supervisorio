@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Route, Router } from '@angular/router';
+import { ProjectRoutes } from '../../enum/routes.enum';
 import { LoginInterface } from '../../interfaces/login.interface';
 import { ProjectCustomizationService } from '../../services/project-customization.service';
 
@@ -22,6 +24,7 @@ export class LoginComponent implements OnInit {
   constructor(
     private readonly projectCustomizationService: ProjectCustomizationService,
     private readonly formBuilder: FormBuilder,
+    private readonly router: Router
     ){
   }
 
@@ -42,7 +45,7 @@ export class LoginComponent implements OnInit {
 
   public login(): void {
     const objLogin = this.formCliente.value as LoginInterface;
-    console.log(objLogin);
+    this.router.navigate([ProjectRoutes.HOME]);
   }
 
 }

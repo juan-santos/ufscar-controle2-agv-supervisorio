@@ -1,0 +1,6 @@
+<div *ngIf="(menuObservable | async) as menu"
+  class="sidebar" [ngClass]="menu.showMenu ? 'sidebar__show': 'sidebar__hide'">
+  <div >
+    Oi
+  </div>
+</div>

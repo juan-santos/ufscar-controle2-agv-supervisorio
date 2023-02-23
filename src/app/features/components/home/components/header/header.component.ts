@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MenuService } from './../../../../services/menu/menu.service';
 
 @Component({
   selector: 'app-header',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 
+  constructor(private readonly menuService: MenuService){
+
+  }
+
+  public hideSidebar(): void {
+    this.menuService.setMenuValue();
+  }
 }

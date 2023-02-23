@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Route, Router } from '@angular/router';
 import { ProjectRoutes } from '../../enum/routes.enum';
 import { LoginInterface } from '../../interfaces/login.interface';
-import { ProjectCustomizationService } from '../../services/project-customization.service';
+import { ProjectCustomizationService } from '../../services/project-customization/project-customization.service';
 
 @Component({
     selector: 'app-login',

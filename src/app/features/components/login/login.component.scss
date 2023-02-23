@@ -27,7 +27,11 @@
 .banner-image {
   background-repeat: no-repeat;
   background-position: center;
-  min-height: 800px;
+  min-height: 700px;
   background-size: cover;
   background-image: linear-gradient(90deg, rgba(0,0,0,0) 95%, rgba(255, 255, 255, 1) 98%), url(http://localhost:4200/assets/image_dc.jpeg);
+}
+
+.border_shadow {
+  box-shadow: -5px 10px 20px 12px rgb(0 0 0 / 20%);
 }

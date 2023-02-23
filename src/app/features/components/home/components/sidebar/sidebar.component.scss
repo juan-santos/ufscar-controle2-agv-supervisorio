@@ -1,0 +1,17 @@
+:host {
+    height: calc(100vh - 50px);
+    background-color: #4d94dd;
+    transition: width 2s;
+
+    .sidebar {
+        &__show {
+            width: 240px;
+            transition: width 0.5s;
+        }
+
+        &__hide {
+            width: 60px;
+            transition: width 1s;
+        }
+    }
+}

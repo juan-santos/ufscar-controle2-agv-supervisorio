@@ -1,13 +1,31 @@
 <!-- Imagem e texto -->
 <nav class="w-100 navbar navbar-light bg-light header">
-  <div>
-    <a class="navbar-brand logo" href="#">
-      <img src="./../../../../../../assets/dc.svg" width="50" height="35" class="d-inline-block align-top" alt="">
-    </a>
+    <div>
+        <a class="navbar-brand logo" href="#">
+            <img
+                src="./../../../../../../assets/dc.svg"
+                width="50"
+                height="35"
+                class="d-inline-block align-top"
+                alt=""
+            />
+        </a>
+        <button *ngIf="!isMobile" (click)="hideSidebar()">Esconder/exibir</button>
+    </div>
 
-    <button (click)="hideSidebar()">Esconder/exibir</button>
-  </div>
-  <div>
-    Logout
-  </div>
+    <div *ngIf="isMobile; then mobile; else desktop"></div>
+
+    <ng-template #mobile>
+        <div (click)="hideSidebar()">
+            <img
+                src="./../../../../../../assets/menu.png"
+                width="35"
+                height="35"
+                class="d-inline-block align-top"
+            />
+        </div>
+    </ng-template>
+    <ng-template #desktop>
+        <div>Logout</div>
+    </ng-template>
 </nav>

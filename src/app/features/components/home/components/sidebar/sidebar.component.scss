@@ -1,9 +1,12 @@
 :host {
-    height: calc(100vh - 50px);
-    background-color: #4d94dd;
+    position: relative;
     transition: width 2s;
+    box-shadow: 4px 0px 15px 0px rgb(0 0 0 / 20%);
 
     .sidebar {
+        height: calc(100vh - 50px);
+        background-color: #4d94dd;
+
         &__show {
             width: 240px;
             transition: width 0.5s;
@@ -12,6 +15,24 @@
         &__hide {
             width: 60px;
             transition: width 1s;
+        }
+    }
+
+    .sidebar__mobile {
+        height: calc(100vh - 50px);
+        background-color: #4d94dd;
+
+        &__show {
+            z-index: 1000;
+            position: absolute !important;
+            width: 80vw;
+            max-width: 500px;
+            transition: width 0.5s;
+        }
+
+        &__hide {
+            display: none;
+            transition: visibility 5s, opacity 0.5s linear;
         }
     }
 }

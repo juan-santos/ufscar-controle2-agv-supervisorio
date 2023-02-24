@@ -10,11 +10,13 @@ const routes: Routes = [
     },
     {
         path: ProjectRoutes.LOGIN,
-        loadChildren: () => import('./features/components/login/login.module').then((m) => m.LoginModule),
+        loadChildren: () =>
+            import('./features/components/login/login.module').then((m) => m.LoginModule),
     },
     {
         path: ProjectRoutes.HOME,
-        loadChildren: () => import('./features/components/home/home.module').then((m) => m.HomeModule),
+        loadChildren: () =>
+            import('./features/components/home/home.module').then((m) => m.HomeModule),
     },
 ];
 

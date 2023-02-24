@@ -1,4 +1,4 @@
 export enum ProjectRoutes {
-  LOGIN = 'login',
-  HOME = 'home',
+    LOGIN = 'login',
+    HOME = 'home',
 }

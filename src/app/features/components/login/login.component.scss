@@ -1,37 +1,38 @@
 .title {
-  color: #ff6c29;
+    color: #ff6c29;
 }
 
 .height-size {
-  min-height: 100vh;
+    min-height: 100vh;
 }
 
 .container-align {
-  flex-wrap: wrap;
-  display: flex;
-  background-color: rgb(243, 243, 243);
-  align-content: center;
+    flex-wrap: wrap;
+    display: flex;
+    background-color: rgb(243, 243, 243);
+    align-content: center;
 }
 
 .logo {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 
-  img {
-    width: 150px;
-    height: 150px;
-  }
+    img {
+        width: 150px;
+        height: 150px;
+    }
 }
 
 .banner-image {
-  background-repeat: no-repeat;
-  background-position: center;
-  min-height: 700px;
-  background-size: cover;
-  background-image: linear-gradient(90deg, rgba(0,0,0,0) 95%, rgba(255, 255, 255, 1) 98%), url(http://localhost:4200/assets/image_dc.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 700px;
+    background-size: cover;
+    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 95%, rgba(255, 255, 255, 1) 98%),
+        url(http://localhost:4200/assets/image_dc.jpeg);
 }
 
 .border_shadow {
-  box-shadow: -5px 10px 20px 12px rgb(0 0 0 / 20%);
+    box-shadow: -5px 10px 20px 12px rgb(0 0 0 / 20%);
 }

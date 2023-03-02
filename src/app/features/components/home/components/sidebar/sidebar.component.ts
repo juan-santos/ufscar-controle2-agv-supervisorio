@@ -33,4 +33,8 @@ export class SidebarComponent {
                 : 'sidebar sidebar';
         });
     }
+
+    public closeSidebar(): void {
+        this.menuService.setMenuValue();
+    }
 }

@@ -9,7 +9,7 @@ export interface MenuInterface {
     providedIn: 'root',
 })
 export class MenuService {
-    private $hideMenuObserver = new BehaviorSubject<MenuInterface>({ showMenu: true });
+    private $hideMenuObserver = new BehaviorSubject<MenuInterface>({ showMenu: false });
 
     public hideMenuObserver(): Observable<MenuInterface> {
         return this.$hideMenuObserver.asObservable();

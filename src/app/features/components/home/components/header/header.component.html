@@ -10,7 +10,7 @@
         />
     </a>
     <button class="btn" *ngIf="!isMobile && (menuObservable | async) as menu" (click)="hideSidebar()">
-      <i [ngClass]="[menu.showMenu ? 'bi-arrow-bar-left' : 'bi-arrow-bar-right']" class="bi"></i>
+      <i  style="font-size: 1.2rem;" [ngClass]="[menu.showMenu ? 'bi-arrow-bar-left' : 'bi-arrow-bar-right']" class="bi"></i>
     </button>
     <div class="collapse navbar-collapse">
         <ul class="navbar-nav">

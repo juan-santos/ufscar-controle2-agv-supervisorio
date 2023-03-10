@@ -1,11 +1,10 @@
 <div
     *ngIf="menuObservable | async as menu" class="content_page"
-    [ngClass]="menu.showMenu ? classMobile + '__show' : classMobile + '__hide'"
->
+    [ngClass]="menu.showMenu ? classMobile + '__show' : classMobile + '__hide'">
     <div>
 
     </div>
     <div *ngIf="isMobile && menu.showMenu">
-      <button (click)="closeSidebar()">x<i class="bi bi-star-fill"></i></button>
+      <button class="btn" (click)="closeSidebar()"><i class="bi-x-lg" style="font-size: 3rem; color: #fff;" ></i></button>
     </div>
 </div>

@@ -2,6 +2,7 @@
     div {
         display: flex;
         flex-direction: column;
+        height: calc(100vh - 43px);
 
         section {
             display: flex;
@@ -14,6 +15,7 @@
     }
 
     .content {
+      overflow: scroll;
       padding: 34px 24px 12px 24px;
     }
 }

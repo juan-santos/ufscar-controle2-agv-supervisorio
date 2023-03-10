@@ -33,6 +33,9 @@
             display: none;
             transition: visibility 5s, opacity 0.5s linear;
         }
+
+        height: calc(100% - 43px) !important;
+        position: absolute;
     }
 
     .content_page {
@@ -40,5 +43,6 @@
       flex-direction: column;
       justify-content: space-between;
       align-items: center;
+      height: 100%;
     }
 }

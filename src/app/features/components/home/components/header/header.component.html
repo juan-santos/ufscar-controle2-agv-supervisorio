@@ -10,7 +10,7 @@
         />
     </a>
     <button *ngIf="!isMobile" (click)="hideSidebar()">Esconder/exibir</button>
-    <div class="collapse navbar-collapse" id="navbarNav">
+    <div class="collapse navbar-collapse">
         <ul class="navbar-nav">
             <li class="nav-item">
                 <a class="nav-link" [routerLink]="['/home/welcome']">Home</a>
@@ -27,16 +27,17 @@
     <div *ngIf="isMobile; then mobile; else desktop"></div>
 
     <ng-template #mobile>
-        <div (click)="hideSidebar()">
-            <img
-                src="./../../../../../../assets/menu.png"
-                width="35"
-                height="35"
-                class="d-inline-block align-top icon_menu"
-            />
-        </div>
+        <button class="navbar-toggler icon_menu" type="button" (click)="hideSidebar()">
+          <span class="navbar-toggler-icon"></span>
+        </button>
     </ng-template>
     <ng-template #desktop>
-        <div>Logout</div>
+      <div>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/login']">Logout</a>
+            </li>
+        </ul>
+      </div>
     </ng-template>
 </nav>

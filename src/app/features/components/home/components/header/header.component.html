@@ -9,7 +9,9 @@
             alt=""
         />
     </a>
-    <button *ngIf="!isMobile" (click)="hideSidebar()">Esconder/exibir</button>
+    <button class="btn" *ngIf="!isMobile && (menuObservable | async) as menu" (click)="hideSidebar()">
+      <i [ngClass]="[menu.showMenu ? 'bi-arrow-bar-left' : 'bi-arrow-bar-right']" class="bi"></i>
+    </button>
     <div class="collapse navbar-collapse">
         <ul class="navbar-nav">
             <li class="nav-item">

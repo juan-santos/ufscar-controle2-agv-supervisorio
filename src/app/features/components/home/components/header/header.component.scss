@@ -11,6 +11,7 @@
 
     .logo {
         padding-left: 2px;
+        margin-right: 0px;
     }
 
     .icon_menu {
@@ -20,5 +21,9 @@
 
     .icon_menu:hover {
         background-color: #ccc;
+    }
+
+    i:hover {
+      color: #4d94dd;
     }
 }

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { MenuItensInterface } from '../../interfaces/menu.interface';
 
 export interface MenuInterface {
     showMenu: boolean;
@@ -14,7 +15,6 @@ export class MenuService {
     public hideMenuObserver(): Observable<MenuInterface> {
         return this.$hideMenuObserver.asObservable();
     }
-
     /**
      *
      * @param show Parametro responsável por exibir/ocultar o menu lateral
@@ -22,4 +22,18 @@ export class MenuService {
     public setMenuValue(): void {
         this.$hideMenuObserver.next({ showMenu: !this.$hideMenuObserver.value.showMenu });
     }
+
+    private $menuItensInterfaceObserver = new BehaviorSubject<MenuItensInterface>(null);
+
+    public menuItensInterfaceObserver(): Observable<MenuItensInterface> {
+        return this.$menuItensInterfaceObserver.asObservable();
+    }
+
+    /**
+     *
+     * @param show Parametro responsável por preencher os itens de menu
+     */
+    public setMenuItensValue(itens: MenuItensInterface): void {
+      this.$menuItensInterfaceObserver.next(itens);
+  }
 }

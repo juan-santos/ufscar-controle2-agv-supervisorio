@@ -1,15 +1,15 @@
 <div
     *ngIf="menuObservable | async as menu" class="content_page"
     [ngClass]="menu.showMenu ? classMobile + '__show' : classMobile + '__hide'">
-    <div class="content">
+    <div *ngIf="menuItens | async as itens" class="content">
       <div>
-        <h3>Gerenciamento de AGVs</h3>
+        <h3>{{itens.title}}</h3>
         <hr/>
       </div>
       <div>
         <ul>
-          <li><i class="bi bi-file-earmark-plus-fill"></i><span>Novo AGV</span></li>
-          <li><i class="bi bi-card-list"></i><span>Lista de AGVs</span></li>
+          <li *ngFor="let item of itens.listItens">
+            <i [class]="item.icon"></i><a [routerLink]="item.link">{{item.name}}</a></li>
          </ul>
       </div>
     </div>
@@ -31,7 +31,6 @@
         <li><i class="bi bi-pencil-fill"></i></li>
         <li><i class="bi bi-person-circle"></i></li>
       -->
-
     <div *ngIf="isMobile && menu.showMenu">
       <button class="btn" (click)="closeSidebar()"><i class="bi-x-lg" style="font-size: 3rem; color: #fff;" ></i></button>
     </div>

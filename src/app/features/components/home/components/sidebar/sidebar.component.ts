@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
+import { MenuItensInterface } from 'src/app/features/interfaces/menu.interface';
 import { ResizebledService } from './../../../../../features/shared/resizebled/service/resizebled/resizebled.service';
 import { MenuInterface, MenuService } from './../../../../services/menu/menu.service';
 
@@ -24,6 +25,10 @@ export class SidebarComponent {
     public get menuObservable(): Observable<MenuInterface> {
         return this.menuService.hideMenuObserver();
     }
+
+    public get menuItens(): Observable<MenuItensInterface> {
+      return this.menuService.menuItensInterfaceObserver();
+  }
 
     public ngOnInit(): void {
         this.resizebledService.screenSize.subscribe((data) => {

@@ -17,12 +17,12 @@ export class AgvComponent {
       listItens: [
         {
           name: 'Adicionar AGV',
-          link: '/home/agv',
+          link: '/home/agv/new',
           icon: 'bi bi-plus'
         },
         {
           name: 'Gerenciamento de AGV',
-          link: '/home/agv',
+          link: '/home/agv/management',
           icon: 'bi bi-gear-fill'
         }
       ]

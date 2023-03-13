@@ -17,12 +17,12 @@ export class UsersComponent {
       listItens: [
         {
           name: 'Adicionar usuário',
-          link: '/home/users',
+          link: '/home/users/new',
           icon: 'bi bi-person-plus-fill'
         },
         {
           name: 'Gerenciamento de usuários',
-          link: '/home/users',
+          link: '/home/users/management',
           icon: 'bi bi-person-fill-gear'
         }
       ]

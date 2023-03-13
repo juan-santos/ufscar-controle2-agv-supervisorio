@@ -18,6 +18,7 @@ const routes: Routes = [
         loadChildren: () =>
             import('./features/components/home/home.module').then((m) => m.HomeModule),
     },
+    { path: 'logout', loadChildren: () => import('./features/components/logout/logout.module').then(m => m.LogoutModule) },
 ];
 
 @NgModule({

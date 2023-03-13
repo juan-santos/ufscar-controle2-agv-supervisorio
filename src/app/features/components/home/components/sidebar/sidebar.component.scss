@@ -27,24 +27,21 @@
 
                         li {
                             padding: 8px 8px 8px 24px;
-                            display: flex;
-                            flex-direction: row;
-                            align-items: center;
-                            cursor: pointer;
 
-                            i,
                             a {
+                                display: flex;
+                                flex-direction: row;
+                                align-items: center;
+                                text-decoration: none;
                                 color: #fff;
-                            }
-
-                            i {
-                                font-size: 30px;
-                                padding-right: 12px;
+                                i {
+                                    font-size: 30px;
+                                    padding-right: 12px;
+                                }
                             }
                         }
 
                         li:hover {
-                            i,
                             a {
                                 color: #000 !important;
                             }
@@ -73,12 +70,14 @@
                         li {
                             padding: 8px;
                             a {
-                                display: none;
-                            }
+                                i {
+                                    font-size: 30px;
+                                    color: #fff;
+                                }
 
-                            i {
-                                font-size: 30px;
-                                color: #fff;
+                                span {
+                                    display: none;
+                                }
                             }
                         }
 
@@ -125,20 +124,19 @@
                             align-items: center;
                             cursor: pointer;
 
-                            i,
                             a {
+                                text-decoration: none;
                                 color: #fff;
-                            }
-
-                            i {
-                                font-size: 30px;
-                                padding-right: 12px;
+                                i {
+                                    font-size: 30px;
+                                    padding-right: 12px;
+                                }
                             }
                         }
 
                         li:hover {
                             i,
-                            a {
+                            span {
                                 color: #000 !important;
                             }
                         }
@@ -147,14 +145,12 @@
             }
 
             div {
-
                 button {
-                  cursor: pointer !important;
-                  i:hover {
-                    color: #000 !important;
-                  }
+                    cursor: pointer !important;
+                    i:hover {
+                        color: #000 !important;
+                    }
                 }
-
             }
         }
 
@@ -177,5 +173,14 @@
         justify-content: space-between;
         align-items: center;
         height: 100%;
+    }
+
+    .active {
+      span {
+        color: #000 !important;
+      }
+      i {
+        color: #000 !important;
+      }
     }
 }

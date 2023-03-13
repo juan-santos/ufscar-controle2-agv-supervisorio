@@ -7,6 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewAgvComponent implements OnInit {
   public ngOnInit() {
-    console.log("NewAgvComponent");
+
   }
 }

@@ -4,17 +4,93 @@
     .sidebar {
         height: calc(100vh - 50px);
         background-color: #4d94dd;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
 
         &__show {
             width: 240px;
             transition: width 0.5s;
             box-shadow: 0px 10px 10px 0px rgb(0 0 0 / 50%);
+
+            .content {
+                div {
+                    h3 {
+                        padding: 20px 8px 8px 20px;
+                        font-size: 18px;
+                        color: #fff;
+                    }
+
+                    ul {
+                        list-style-type: none;
+                        padding: 0;
+
+                        li {
+                            padding: 8px 8px 8px 24px;
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            cursor: pointer;
+
+                            i,
+                            span {
+                                color: #fff;
+                            }
+
+                            i {
+                                font-size: 30px;
+                                padding-right: 12px;
+                            }
+                        }
+
+                        li:hover {
+                            i,
+                            span {
+                                color: #000 !important;
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         &__hide {
             width: 60px;
             transition: width 1s;
             box-shadow: 0px 10px 10px 0px rgb(0 0 0 / 50%);
+
+            .content {
+                div {
+                    h3,
+                    hr {
+                        display: none;
+                    }
+
+                    ul {
+                        list-style-type: none;
+                        padding: 0;
+
+                        li {
+                            padding: 8px;
+                            span {
+                                display: none;
+                            }
+
+                            i {
+                                font-size: 30px;
+                                color: #fff;
+                            }
+                        }
+
+                        li:hover {
+                            i,
+                            span {
+                                color: #000 !important;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 
@@ -27,11 +103,68 @@
             max-width: 500px;
             transition: width 0.5s;
             box-shadow: 0px 10px 20px 0px rgb(0 0 0 / 50%);
+
+            .content {
+                width: 85%;
+
+                div {
+                    h3 {
+                        padding: 20px 8px 8px 20px;
+                        font-size: 18px;
+                        color: #fff;
+                    }
+
+                    ul {
+                        list-style-type: none;
+                        padding: 0;
+
+                        li {
+                            padding: 8px 8px 8px 24px;
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            cursor: pointer;
+
+                            i,
+                            span {
+                                color: #fff;
+                            }
+
+                            i {
+                                font-size: 30px;
+                                padding-right: 12px;
+                            }
+                        }
+
+                        li:hover {
+                            i,
+                            span {
+                                color: #000 !important;
+                            }
+                        }
+                    }
+                }
+            }
+
+            div {
+
+                button {
+                  cursor: pointer !important;
+                  i:hover {
+                    color: #000 !important;
+                  }
+                }
+
+            }
         }
 
         &__hide {
             display: none;
             transition: visibility 5s, opacity 0.5s linear;
+
+            .content {
+                display: none;
+            }
         }
 
         height: calc(100% - 50px) !important;
@@ -39,14 +172,10 @@
     }
 
     .content_page {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-      height: 100%;
-    }
-
-    i:hover {
-      color: #000 !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
     }
 }

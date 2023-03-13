@@ -1,9 +1,37 @@
 <div
     *ngIf="menuObservable | async as menu" class="content_page"
     [ngClass]="menu.showMenu ? classMobile + '__show' : classMobile + '__hide'">
-    <div>
-
+    <div class="content">
+      <div>
+        <h3>Gerenciamento de AGVs</h3>
+        <hr/>
+      </div>
+      <div>
+        <ul>
+          <li><i class="bi bi-file-earmark-plus-fill"></i><span>Novo AGV</span></li>
+          <li><i class="bi bi-card-list"></i><span>Lista de AGVs</span></li>
+         </ul>
+      </div>
     </div>
+<!--
+        <li><i class="bi bi-card-list"></i></li>
+        <li><i class="bi bi-collection"></i></li>
+        <li><i class="bi bi-dash-circle"></i></li>
+        <li><i class="bi bi-eraser"></i></li>
+        <li><i class="bi bi-eraser-fill"></i></li>
+        <li><i class="bi bi-eye"></i></li>
+        <li><i class="bi bi-eye-slash"></i></li>
+        <li><i class="bi bi-file-earmark"></i></li>
+        <li><i class="bi bi-file-earmark-excel"></i></li>
+        <li><i class="bi bi-file-earmark-plus-fill"></i></li>
+        <li><i class="bi bi-file-earmark-text"></i></li>
+        <li><i class="bi bi-file-person"></i></li>
+        <li><i class="bi bi-info-circle"></i></li>
+        <li><i class="bi bi-pencil"></i></li>
+        <li><i class="bi bi-pencil-fill"></i></li>
+        <li><i class="bi bi-person-circle"></i></li>
+      -->
+
     <div *ngIf="isMobile && menu.showMenu">
       <button class="btn" (click)="closeSidebar()"><i class="bi-x-lg" style="font-size: 3rem; color: #fff;" ></i></button>
     </div>

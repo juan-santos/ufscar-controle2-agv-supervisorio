@@ -1,20 +1,65 @@
 <div class="w-100" *ngIf="agvInfo">
-  <h2 class="mb-5">Status do AGV</h2>
+    <h2 class="mb-5">Informações do AGV</h2>
 
-  <div class="row">
-    <div class="mb-2 col-md-2">
-      <span class="lead">ID</span> <p>{{agvInfo.id}}</p>
+    <div class="row mb-5">
+        <div class="mb-2 col-md-2">
+            <span class="lead">ID</span>
+            <p>{{ agvInfo.id }}</p>
+        </div>
+
+        <div class="mb-2 col-md-5">
+            <span class="lead">Nome</span>
+            <p>{{ agvInfo.name }}</p>
+        </div>
+
+        <div class="mb-2 col-md-5">
+            <span class="lead">IP</span>
+            <p>{{ agvInfo.ip }}</p>
+        </div>
     </div>
 
-    <div class="mb-2 col-md-5">
-      <span class="lead">Nome</span>
-      <p>{{agvInfo.name}}</p>
-    </div>
+    <div class="container">
 
-    <div class="mb-2 col-md-5">
-      <span class="lead">IP</span>
-      <p>{{agvInfo.ip}}</p>
-    </div>
-  </div>
+        <div class="row justify-content-sm-center">
+            <p class="display-6">Status</p>
+        </div>
 
+        <div #step class="bs-stepper">
+            <div class="bs-stepper-header">
+              <div class="line"></div>
+                <div class="step" data-target="#test-l-1">
+                    <button class="step-trigger">
+                        <span class="bs-stepper-circle"><i class="bi bi-plus"></i></span>
+                        <span class="bs-stepper-label">Início</span>
+                    </button>
+                </div>
+                <div class="line"></div>
+                <div class="step" data-target="#test-l-2">
+                    <button class="step-trigger">
+                        <span class="bs-stepper-circle"><i class="bi bi-arrow-repeat"></i></span>
+                        <span class="bs-stepper-label">Andando</span>
+                    </button>
+                </div>
+                <div class="line"></div>
+                <div class="step" data-target="#test-l-3">
+                    <button class="step-trigger">
+                        <span class="bs-stepper-circle">3</span>
+                        <span class="bs-stepper-label">Fim</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="bs-stepper-content">
+              <div id="test-l-1" class="content">
+                <button (click)="next()" class="btn btn-primary">Proximo</button>
+              </div>
+              <div id="test-l-2" class="content">
+                <button (click)="next()" class="btn btn-primary">Proximo</button>
+              </div>
+              <div id="test-l-3" class="content">
+                <button (click)="next()" class="btn btn-primary">Proximo</button>
+              </div>
+            </div>
+        </div>
+    </div>
 </div>

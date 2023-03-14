@@ -1,6 +1,7 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Navigation, NavigationStart, Router } from '@angular/router';
-import { filter, take } from 'rxjs';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import Stepper from 'bs-stepper';
+import { take } from 'rxjs';
 import { AGV } from './../../../../../../../../features/interfaces/agv.interface';
 
 @Component({
@@ -8,9 +9,10 @@ import { AGV } from './../../../../../../../../features/interfaces/agv.interface
   templateUrl: './information-agv.component.html',
   styleUrls: ['./information-agv.component.scss']
 })
-export class InformationAgvComponent implements OnInit {
+export class InformationAgvComponent implements OnInit, AfterViewInit {
   public agvInfo: AGV = null;
-
+  private stepper: Stepper;
+  @ViewChild('step') element: ElementRef;
   constructor(
     private activatedRoute: ActivatedRoute,
     private router: Router
@@ -25,7 +27,21 @@ export class InformationAgvComponent implements OnInit {
         this.router.navigate(['/home/agv'])
       }
     })
+  }
 
+  public ngAfterViewInit(): void {
+    this.stepper = new Stepper(this.element.nativeElement, {
+      linear: true,
+      animation: true
+    });
+  }
+
+  next() {
+    this.stepper.next()
+  }
+
+  onSubmit() {
+    return false;
   }
 
 }

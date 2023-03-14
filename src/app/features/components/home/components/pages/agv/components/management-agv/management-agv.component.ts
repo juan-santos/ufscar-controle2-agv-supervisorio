@@ -20,22 +20,22 @@ export class ManagementAgvComponent implements OnInit {
     {
       id: 1,
       name: 'AGV da sala 1',
-      ip: '192.168.0.1',
+      ip: '127.0.0.1',
     },
     {
       id: 2,
       name: 'AGV da sala 2',
-      ip: '192.168.0.2',
+      ip: '127.0.0.1',
     },
     {
       id: 3,
       name: 'AGV da sala 3',
-      ip: '192.168.0.3',
+      ip: '127.0.0.1',
     },
     {
       id: 4,
       name: 'AGV da sala 4',
-      ip: '192.168.0.4',
+      ip: '127.0.0.1',
     }
   ]
 

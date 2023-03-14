@@ -1,2 +1,18 @@
+Para executar o servidor socket é necessário compilar os programas escritos em C
+com os comandos abaixo:
+
 gcc client.c -o client -std=gnu99 -Wall
 gcc server.c -o server -std=gnu99 -Wall
+
+
+Após a compilação, execute o servidor e o cliente em dois terminais diferentes:
+
+--> terminal 1 com servidor:
+./server
+
+--> terminal 2 com cliente:
+./client
+
+
+
+https://blog.pantuza.com/artigos/programando-um-protocolo-utilizando-sockets

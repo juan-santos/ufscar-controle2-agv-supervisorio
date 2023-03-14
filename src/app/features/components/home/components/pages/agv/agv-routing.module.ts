@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ProjectRoutes } from './../../../../../../features/enum/routes.enum';
 import { AgvComponent } from './agv.component';
+import { InformationAgvComponent } from './components/information-agv/information-agv.component';
 import { ManagementAgvComponent } from './components/management-agv/management-agv.component';
 import { NewAgvComponent } from './components/new-agv/new-agv.component';
 
@@ -22,6 +23,10 @@ const routes: Routes = [
       {
         path: ProjectRoutes.NEW,
         component: NewAgvComponent
+      },
+      {
+        path: ProjectRoutes.INFORMATION,
+        component: InformationAgvComponent
       },
     ]
   }

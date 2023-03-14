@@ -1,0 +1,20 @@
+<div class="w-100" *ngIf="agvInfo">
+  <h2 class="mb-5">Status do AGV</h2>
+
+  <div class="row">
+    <div class="mb-2 col-md-2">
+      <span class="lead">ID</span> <p>{{agvInfo.id}}</p>
+    </div>
+
+    <div class="mb-2 col-md-5">
+      <span class="lead">Nome</span>
+      <p>{{agvInfo.name}}</p>
+    </div>
+
+    <div class="mb-2 col-md-5">
+      <span class="lead">IP</span>
+      <p>{{agvInfo.ip}}</p>
+    </div>
+  </div>
+
+</div>

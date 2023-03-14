@@ -6,5 +6,6 @@ export enum ProjectRoutes {
     WELCOME = 'welcome',
     USERS = 'users',
     NEW = 'new',
+    INFORMATION = 'info',
     MANAGEMENT = 'management'
 }

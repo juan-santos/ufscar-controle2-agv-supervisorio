@@ -1,7 +1,8 @@
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import Stepper from 'bs-stepper';
-import { take } from 'rxjs';
+import { Subscription, take } from 'rxjs';
+import { SocketService } from './../../../../../../../../features/services/socket/socket.service';
 import { STATE_AGV } from './../../../../../../../../features/enum/state.enum';
 import { AGV } from './../../../../../../../../features/interfaces/agv.interface';
 
@@ -10,18 +11,26 @@ import { AGV } from './../../../../../../../../features/interfaces/agv.interface
   templateUrl: './information-agv.component.html',
   styleUrls: ['./information-agv.component.scss']
 })
-export class InformationAgvComponent implements OnInit, AfterViewInit {
+export class InformationAgvComponent implements OnInit, AfterViewInit, OnDestroy {
   public enumState = STATE_AGV;
   public agvInfo: AGV = null;
 
   private _stepper: Stepper;
   private _state: STATE_AGV = STATE_AGV.STOPED;
+  private _observer: Subscription;
 
-  @ViewChild('step') element: ElementRef;
+  @ViewChild('step')
+  private element: ElementRef;
+
   constructor(
     private activatedRoute: ActivatedRoute,
-    private router: Router
-  ) {}
+    private router: Router,
+    private socketService: SocketService
+  ) {
+    this._observer = this.socketService.listenServer().subscribe((data)=>{
+      console.log(data);
+    })
+  }
 
   /**
    * Propriedade responsável por indicar o status atual
@@ -52,6 +61,10 @@ export class InformationAgvComponent implements OnInit, AfterViewInit {
       linear: true,
       animation: true
     });
+  }
+
+  public ngOnDestroy(): void {
+    this._observer.unsubscribe();
   }
 
   next() {

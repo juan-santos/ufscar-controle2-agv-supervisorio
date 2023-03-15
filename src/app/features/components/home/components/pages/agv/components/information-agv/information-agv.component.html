@@ -19,24 +19,42 @@
     </div>
 
     <div class="container">
-
         <div class="row justify-content-sm-center">
             <p class="display-6">Status</p>
         </div>
 
         <div #step class="bs-stepper">
             <div class="bs-stepper-header">
-              <div class="line"></div>
                 <div class="step" data-target="#test-l-1">
                     <button class="step-trigger">
                         <span class="bs-stepper-circle"><i class="bi bi-plus"></i></span>
-                        <span class="bs-stepper-label">Início</span>
+                        <span class="bs-stepper-label" [ngSwitch]="state">
+                            <ng-container *ngSwitchCase="enumState.EMERGENCY">
+                                Emergencia
+                            </ng-container>
+
+                            <ng-container *ngSwitchDefault>
+                              Parado
+                            </ng-container>
+                        </span>
                     </button>
                 </div>
                 <div class="line"></div>
                 <div class="step" data-target="#test-l-2">
                     <button class="step-trigger">
-                        <span class="bs-stepper-circle"><i class="bi bi-arrow-repeat"></i></span>
+                        <span class="bs-stepper-circle">
+                          <div *ngIf="state === enumState.WALKING then loading else icon"></div>
+
+                          <ng-template #loading>
+                            <div class="spinner-border spinner-border-sm" role="status">
+                              <span class="visually-hidden">Loading...</span>
+                            </div>
+                          </ng-template>
+
+                          <ng-template #icon>
+                            <i class="bi bi-arrow-repeat"></i>
+                          </ng-template>
+                        </span>
                         <span class="bs-stepper-label">Andando</span>
                     </button>
                 </div>
@@ -50,15 +68,15 @@
             </div>
 
             <div class="bs-stepper-content">
-              <div id="test-l-1" class="content">
-                <button (click)="next()" class="btn btn-primary">Proximo</button>
-              </div>
-              <div id="test-l-2" class="content">
-                <button (click)="next()" class="btn btn-primary">Proximo</button>
-              </div>
-              <div id="test-l-3" class="content">
-                <button (click)="next()" class="btn btn-primary">Proximo</button>
-              </div>
+                <div id="test-l-1" class="content">
+
+                </div>
+                <div id="test-l-2" class="content">
+
+                </div>
+                <div id="test-l-3" class="content">
+
+                </div>
             </div>
         </div>
     </div>

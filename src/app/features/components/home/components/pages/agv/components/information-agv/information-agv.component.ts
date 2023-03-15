@@ -2,6 +2,7 @@ import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angula
 import { ActivatedRoute, Router } from '@angular/router';
 import Stepper from 'bs-stepper';
 import { take } from 'rxjs';
+import { STATE_AGV } from './../../../../../../../../features/enum/state.enum';
 import { AGV } from './../../../../../../../../features/interfaces/agv.interface';
 
 @Component({
@@ -10,14 +11,28 @@ import { AGV } from './../../../../../../../../features/interfaces/agv.interface
   styleUrls: ['./information-agv.component.scss']
 })
 export class InformationAgvComponent implements OnInit, AfterViewInit {
+  public enumState = STATE_AGV;
   public agvInfo: AGV = null;
-  private stepper: Stepper;
+
+  private _stepper: Stepper;
+  private _state: STATE_AGV = STATE_AGV.WALKING;
+
   @ViewChild('step') element: ElementRef;
   constructor(
     private activatedRoute: ActivatedRoute,
     private router: Router
   ) {}
 
+  /**
+   * Propriedade responsável por indicar o status atual
+   */
+  public get state(): STATE_AGV {
+    return this._state;
+  }
+
+  /**
+   * Método ngOnInit
+   */
   public ngOnInit(): void {
     this.activatedRoute.queryParams.pipe(take(1)).subscribe((data) => {
 
@@ -29,19 +44,18 @@ export class InformationAgvComponent implements OnInit, AfterViewInit {
     })
   }
 
+  /**
+   * Método ngAfterViewInit
+   */
   public ngAfterViewInit(): void {
-    this.stepper = new Stepper(this.element.nativeElement, {
+    this._stepper = new Stepper(this.element.nativeElement, {
       linear: true,
       animation: true
     });
   }
 
   next() {
-    this.stepper.next()
-  }
-
-  onSubmit() {
-    return false;
+    this._stepper.next()
   }
 
 }

@@ -6,6 +6,7 @@ import { AgvComponent } from './agv.component';
 import { ManagementAgvComponent } from './components/management-agv/management-agv.component';
 import { NewAgvComponent } from './components/new-agv/new-agv.component';
 import { InformationAgvComponent } from './components/information-agv/information-agv.component';
+import { SocketService } from './../../../../../../features/services/socket/socket.service';
 
 
 @NgModule({
@@ -18,6 +19,9 @@ import { InformationAgvComponent } from './components/information-agv/informatio
   imports: [
     CommonModule,
     AgvRoutingModule
+  ],
+  providers: [
+    SocketService
   ]
 })
 export class AgvModule { }

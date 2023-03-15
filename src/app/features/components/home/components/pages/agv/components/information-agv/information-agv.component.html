@@ -33,11 +33,11 @@
         <div class="row mb-5">
             <div class="col-6">
                 <span class="lead title">Status:</span>
-                &nbsp;<span>Ligado</span>
+                &nbsp;<span> {{connected ? 'conectado': 'desconectado'}}</span>
             </div>
             <div class="col-6">
                 <span class="lead title">Bateria:</span>
-                &nbsp;<span>50%</span>
+                &nbsp;<span>{{battery ? battery + '%' : '-'}}</span>
             </div>
         </div>
 
@@ -45,11 +45,19 @@
             <div class="bs-stepper-header">
                 <div class="step" data-target="#test-l-1">
                     <button class="step-trigger">
-                        <span class="bs-stepper-circle"><i class="bi bi-plus"></i></span>
+                        <span class="bs-stepper-circle"><i class="bi bi-toggle-off"></i></span>
                         <span class="bs-stepper-label" [ngSwitch]="state">
-                            <ng-container *ngSwitchCase="enumState.EMERGENCY">
-                                Emergencia
+                            <ng-container *ngSwitchCase="enumState.OFF">
+                              Desconectado
                             </ng-container>
+
+                            <ng-container *ngSwitchCase="enumState.EMERGENCY">
+                              Emergencia
+                            </ng-container>
+
+                            <ng-container *ngSwitchCase="enumState.WAITING">
+                              Esperando
+                          </ng-container>
 
                             <ng-container *ngSwitchDefault> Parado </ng-container>
                         </span>
@@ -77,7 +85,7 @@
                 <div class="line"></div>
                 <div class="step" data-target="#test-l-3">
                     <button class="step-trigger">
-                        <span class="bs-stepper-circle">3</span>
+                        <span class="bs-stepper-circle"><i class="bi bi-flag-fill"></i></span>
                         <span class="bs-stepper-label">Fim</span>
                     </button>
                 </div>

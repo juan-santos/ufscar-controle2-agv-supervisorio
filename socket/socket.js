@@ -5,34 +5,24 @@ let io = require("socket.io")(http, {
     'Access-Control-Allow-Origin': "*",
     methods: ["GET", "POST"]
   }
-
-  // handlePreflightRequest: (req, res) => {
-  //   const headers = {
-  //       "Access-Control-Allow-Headers": "Content-Type, Authorization",
-  //       "Access-Control-Allow-Origin": req.headers.origin, //or the specific origin you want to give access to,
-  //       "Access-Control-Allow-Credentials": true
-  //   };
-  //   res.writeHead(200, headers);
-  //   res.end();
-  // }
-
-  // allowRequest: (req, callback) => {
-  //   const noOriginHeader = req.headers.origin === undefined;
-  //   callback(null, noOriginHeader);
-  // }
 });
-
-// io.origins((origin, callback) => {
-//   callback(null, true);
-// });
 
 io.on("connection", socket => {
   // Log whenever a user connects
   console.log("user connected");
 
+  let i = 0;
+  const interval = setInterval(() => {
+    if(i >= 5){
+      i = 0;
+    }
+    io.emit("message", { status: i++, battery: 50 - 2*i});
+  }, 3000);
+
   // Log whenever a client disconnects from our websocket server
   socket.on("disconnect", function() {
     console.log("user disconnected");
+    clearInterval(interval);
   });
 
   // When we receive a 'message' event from our client, print out

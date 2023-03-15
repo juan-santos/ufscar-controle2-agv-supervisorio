@@ -12,20 +12,16 @@ export class SocketService {
 
   constructor(){
     this.socket = io('localhost:5001', {
-      //path: '/',
       transports: [
         'polling',
-        //'websocket',
-
-      //'flashsocket'
       ]
     });
   }
 
   public listenServer(): Observable<any> {
-    return new Observable((data) => {
-      this.socket.on('connection', (data: any) => {
-        data.next(data);
+    return new Observable((subscribe: any) => {
+      this.socket.on('message', (data: any) => {
+        return subscribe.next(data);
       })
     })
   }

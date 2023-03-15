@@ -15,7 +15,7 @@ export class InformationAgvComponent implements OnInit, AfterViewInit {
   public agvInfo: AGV = null;
 
   private _stepper: Stepper;
-  private _state: STATE_AGV = STATE_AGV.WALKING;
+  private _state: STATE_AGV = STATE_AGV.STOPED;
 
   @ViewChild('step') element: ElementRef;
   constructor(

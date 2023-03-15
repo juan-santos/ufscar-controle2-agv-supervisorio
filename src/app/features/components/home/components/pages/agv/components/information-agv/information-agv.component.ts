@@ -68,6 +68,8 @@ export class InformationAgvComponent implements OnInit, AfterViewInit, OnDestroy
     this._connected = false;
     this._state = STATE_AGV.OFF;
     this._battery = null;
+
+    this.updateState();
   }
 
   /**

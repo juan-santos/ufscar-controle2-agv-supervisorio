@@ -33,7 +33,16 @@
         <div class="row mb-5">
             <div class="col-6">
                 <span class="lead title">Status:</span>
-                &nbsp;<span> {{connected ? 'conectado': 'desconectado'}}</span>
+                <div *ngIf="connected then on else off"></div>
+
+                <ng-template #on>
+                  &nbsp;<span class="pr-2">conectado</span>
+                  &nbsp;<span class="text-success pr-2 spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+                </ng-template>
+                <ng-template #off>
+                  &nbsp;<span>desconectado</span>
+                </ng-template>
+
             </div>
             <div class="col-6">
                 <span class="lead title">Bateria:</span>
@@ -44,23 +53,34 @@
         <div #step class="bs-stepper">
             <div class="bs-stepper-header">
                 <div class="step" data-target="#test-l-1">
-                    <button class="step-trigger">
-                        <span class="bs-stepper-circle"><i class="bi bi-toggle-off"></i></span>
-                        <span class="bs-stepper-label" [ngSwitch]="state">
-                            <ng-container *ngSwitchCase="enumState.OFF">
-                              Desconectado
-                            </ng-container>
+                    <button class="step-trigger" [ngSwitch]="state">
+                        <ng-container *ngSwitchCase="enumState.OFF">
+                          <span class="bs-stepper-circle warning"><i class="bi bi-toggle-off"></i></span>
+                          <span class="bs-stepper-label" >
+                            Desconectado
+                          </span>
+                        </ng-container>
 
-                            <ng-container *ngSwitchCase="enumState.EMERGENCY">
-                              Emergencia
-                            </ng-container>
+                        <ng-container *ngSwitchCase="enumState.EMERGENCY">
+                          <span class="bs-stepper-circle error"><i class="bi bi-exclamation-diamond-fill"></i></span>
+                          <span class="bs-stepper-label" >
+                            Emergencia
+                          </span>
+                        </ng-container>
 
-                            <ng-container *ngSwitchCase="enumState.WAITING">
-                              Esperando
-                          </ng-container>
+                        <ng-container *ngSwitchCase="enumState.WAITING">
+                          <span class="bs-stepper-circle"><i class="bi bi-clock"></i></span>
+                          <span class="bs-stepper-label" >
+                            Esperando
+                          </span>
+                        </ng-container>
 
-                            <ng-container *ngSwitchDefault> Parado </ng-container>
-                        </span>
+                        <ng-container *ngSwitchDefault>
+                          <span class="bs-stepper-circle"><i class="bi bi-sign-stop"></i></span>
+                          <span class="bs-stepper-label" >
+                            Parado
+                          </span>
+                        </ng-container>
                     </button>
                 </div>
                 <div class="line"></div>

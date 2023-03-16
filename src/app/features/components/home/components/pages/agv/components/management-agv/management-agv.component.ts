@@ -34,7 +34,7 @@ export class ManagementAgvComponent implements OnInit {
    * @param id id do elemento a ser removido
    */
   public exclude(id: number): void {
-    this.agvService.deleteAGV(id).pipe(take(1)).subscribe((data)=>{
+    this.agvService.deleteAGV(id).pipe(take(1)).subscribe((data) => {
       this.listAGV.splice(id, 1);
       this.showAlert = true;
     });

@@ -1,4 +1,5 @@
 {
   "/api/agv/list": "/listAGV",
-  "/api/agv/:id": "/deleteAGV"
+  "/api/agv/:id": "/deleteAGV",
+  "/api/login": "/login"
 }

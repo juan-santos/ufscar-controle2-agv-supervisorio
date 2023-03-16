@@ -23,5 +23,10 @@
   ],
   "deleteAGV": {
     "status": "Removido com sucesso"
+  },
+  "login": {
+    "id": 1,
+    "email": "email@email.com",
+    "name": "João da Silva"
   }
 }

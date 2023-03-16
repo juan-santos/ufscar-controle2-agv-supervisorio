@@ -1,3 +1,32 @@
 <div class="w-100">
-  <h2>Cadastro de AGVs</h2>
+  <h2>{{title}}</h2>
+
+  <form [formGroup]="formCliente" class="mt-5">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Nome</label>
+      <input formControlName="name" type="email" class="form-control" aria-describedby="name">
+      <div id="emailHelp" class="form-text">Escolha um nome para o seu AGV.</div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">IP</label>
+      <input type="text" formControlName="ip" class="form-control">
+    </div>
+
+    <div class="button_container mt-5">
+      <div class="px-3">
+        <a routerLink="/home/agv/management" class="btn btn-light">Cancelar</a>
+      </div>
+      <div class="px-3">
+        <div *ngIf="isNew then new else update"></div>
+        <ng-template #new>
+          <button (click)="newAGV()" [disabled]="formCliente.invalid" type="submit" class="btn btn-info">Cadastrar</button>
+        </ng-template>
+        <ng-template #update>
+          <button (click)="save()" [disabled]="formCliente.invalid" type="submit" class="btn btn-info">Salvar</button>
+        </ng-template>
+
+      </div>
+    </div>
+
+  </form>
 </div>

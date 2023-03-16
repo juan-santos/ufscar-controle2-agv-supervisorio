@@ -7,6 +7,7 @@ import { ManagementAgvComponent } from './components/management-agv/management-a
 import { NewAgvComponent } from './components/new-agv/new-agv.component';
 import { InformationAgvComponent } from './components/information-agv/information-agv.component';
 import { SocketService } from './../../../../../../features/services/socket/socket.service';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { SocketService } from './../../../../../../features/services/socket/sock
   ],
   imports: [
     CommonModule,
-    AgvRoutingModule
+    AgvRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [
     SocketService

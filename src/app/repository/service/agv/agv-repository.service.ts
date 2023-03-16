@@ -15,12 +15,12 @@ export class AgvRepositoryService {
     return this.http.get('/api/agv/list') as Observable<Array<AGV>>;
   }
 
-  public saveAGV(): Observable<AGV> {
-    return null;
+  public saveAGV(agv: AGV): Observable<any> {
+    return this.http.put('/api/agv', {...agv});
   }
 
-  public createAGV(agv: AGV): Observable<AGV> {
-    return null;
+  public createAGV(agv: AGV): Observable<any> {
+    return this.http.post('/api/agv', {...agv});
   }
 
   public deleteAGV(id: number): Observable<any> {

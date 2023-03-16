@@ -1,4 +1,9 @@
 {
+  "getAGV": {
+    "id": 1,
+    "name": "AGV da sala 1",
+    "ip": "127.0.0.1"
+  },
   "listAGV": [
     {
       "id": 1,

@@ -14,8 +14,8 @@ export class AgvService {
     return this.agvRepositoryService.getListAGV();
   }
 
-  public saveAGV(): Observable<AGV> {
-    return this.agvRepositoryService.saveAGV();
+  public saveAGV(agv: AGV): Observable<AGV> {
+    return this.agvRepositoryService.saveAGV(agv);
   }
 
   public createAGV(agv: AGV): Observable<AGV> {

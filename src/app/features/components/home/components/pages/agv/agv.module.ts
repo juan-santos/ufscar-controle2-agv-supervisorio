@@ -9,21 +9,9 @@ import { InformationAgvComponent } from './components/information-agv/informatio
 import { SocketService } from './../../../../../../features/services/socket/socket.service';
 import { ReactiveFormsModule } from '@angular/forms';
 
-
 @NgModule({
-  declarations: [
-    AgvComponent,
-    ManagementAgvComponent,
-    NewAgvComponent,
-    InformationAgvComponent
-  ],
-  imports: [
-    CommonModule,
-    AgvRoutingModule,
-    ReactiveFormsModule
-  ],
-  providers: [
-    SocketService
-  ]
+    declarations: [AgvComponent, ManagementAgvComponent, NewAgvComponent, InformationAgvComponent],
+    imports: [CommonModule, AgvRoutingModule, ReactiveFormsModule],
+    providers: [SocketService],
 })
-export class AgvModule { }
+export class AgvModule {}

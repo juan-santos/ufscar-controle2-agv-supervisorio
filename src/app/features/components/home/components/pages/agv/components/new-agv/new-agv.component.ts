@@ -11,7 +11,6 @@ import { AgvService } from 'src/app/features/services/agv/agv.service';
     styleUrls: ['./new-agv.component.scss'],
 })
 export class NewAgvComponent implements OnInit {
-
     public title: string = '';
     public isNew = true;
 
@@ -24,7 +23,7 @@ export class NewAgvComponent implements OnInit {
         private readonly formBuilder: FormBuilder,
         private activatedRoute: ActivatedRoute,
         private router: Router,
-        private agvService: AgvService,
+        private agvService: AgvService
     ) {}
 
     /**
@@ -32,7 +31,7 @@ export class NewAgvComponent implements OnInit {
      */
     public ngOnInit(): void {
         this.activatedRoute.queryParams.pipe(take(1)).subscribe((data) => {
-          const agv = data as AGV;
+            const agv = data as AGV;
 
             if (agv && agv.id) {
                 this.title = 'Alteração de AGV';
@@ -40,31 +39,36 @@ export class NewAgvComponent implements OnInit {
                 this.formCliente.controls['ip'].setValue(agv.ip);
                 this.isNew = false;
             } else {
-              this.title = 'Cadastro de AGVs';
+                this.title = 'Cadastro de AGVs';
             }
-
         });
     }
 
     public save(): void {
-      this.agvService.saveAGV(this.formCliente.value).pipe(take(1)).subscribe(()=>{
-        const navigationExtras: NavigationExtras = {
-          queryParams: {
-            text: 'AGV alterado com sucesso'
-          }
-        };
-        this.router.navigate(['/home/agv/management'], navigationExtras)
-      })
+        this.agvService
+            .saveAGV(this.formCliente.value)
+            .pipe(take(1))
+            .subscribe(() => {
+                const navigationExtras: NavigationExtras = {
+                    queryParams: {
+                        text: 'AGV alterado com sucesso',
+                    },
+                };
+                this.router.navigate(['/home/agv/management'], navigationExtras);
+            });
     }
 
     public newAGV(): void {
-      this.agvService.createAGV(this.formCliente.value).pipe(take(1)).subscribe(()=>{
-        const navigationExtras: NavigationExtras = {
-          queryParams: {
-            text: 'AGV cadastrado com sucesso'
-          }
-        };
-        this.router.navigate(['/home/agv/management'], navigationExtras)
-      })
+        this.agvService
+            .createAGV(this.formCliente.value)
+            .pipe(take(1))
+            .subscribe(() => {
+                const navigationExtras: NavigationExtras = {
+                    queryParams: {
+                        text: 'AGV cadastrado com sucesso',
+                    },
+                };
+                this.router.navigate(['/home/agv/management'], navigationExtras);
+            });
     }
 }

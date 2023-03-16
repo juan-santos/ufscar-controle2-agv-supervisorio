@@ -6,16 +6,8 @@ import { UsersComponent } from './users.component';
 import { NewUserComponent } from './component/new-user/new-user.component';
 import { ManagementUserComponent } from './component/management-user/management-user.component';
 
-
 @NgModule({
-  declarations: [
-    UsersComponent,
-    NewUserComponent,
-    ManagementUserComponent
-  ],
-  imports: [
-    CommonModule,
-    UsersRoutingModule
-  ]
+    declarations: [UsersComponent, NewUserComponent, ManagementUserComponent],
+    imports: [CommonModule, UsersRoutingModule],
 })
-export class UsersModule { }
+export class UsersModule {}

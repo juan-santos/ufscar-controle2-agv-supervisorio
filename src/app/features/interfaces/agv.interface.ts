@@ -1,6 +1,6 @@
 export interface AGV {
-  id: number;
-  name: string;
-  ip: string;
-  departament?: string;
+    id: number;
+    name: string;
+    ip: string;
+    departament?: string;
 }

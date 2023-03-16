@@ -1,48 +1,48 @@
 <div class="w-100">
-  <h2 class="mb-5">Gerenciamento de AGVs</h2>
+    <h2 class="mb-5">Gerenciamento de AGVs</h2>
 
-  <div *ngIf="showAlert" class="alert alert-success alert-dismissible fade show" role="alert">
-    Equipamento removido com sucesso!
+    <div *ngIf="showAlert" class="alert alert-success alert-dismissible fade show" role="alert">
+        Equipamento removido com sucesso!
 
-    <button type="button" class="btn" (click)="showAlert = false">
-      <i class="bi bi-x"></i>
-    </button>
-  </div>
+        <button type="button" class="btn" (click)="showAlert = false">
+            <i class="bi bi-x"></i>
+        </button>
+    </div>
 
-  <div *ngIf="showMessage" class="alert alert-success alert-dismissible fade show" role="alert">
-    {{showMessage}}
+    <div *ngIf="showMessage" class="alert alert-success alert-dismissible fade show" role="alert">
+        {{ showMessage }}
 
-    <button type="button" class="btn" (click)="showMessage = ''">
-      <i class="bi bi-x"></i>
-    </button>
-  </div>
+        <button type="button" class="btn" (click)="showMessage = ''">
+            <i class="bi bi-x"></i>
+        </button>
+    </div>
 
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Nome</th>
-        <th scope="col">IP</th>
-        <th scope="col">&nbsp;</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let agv of listAGV; index as index">
-        <th scope="row">{{agv.id}}</th>
-        <td>{{agv.name}}</td>
-        <td>{{agv.ip}}</td>
-        <td>
-          <a (click)="update(agv)" class="btn">
-            <i class="bi bi-pencil"></i><span>Alterar</span>
-          </a>
-          <button class="btn ml-2" (click)="exclude(index)">
-            <i class="bi bi-eraser"></i><span>Excluir</span>
-          </button>
-          <a (click)="redirect(agv)" class="btn">
-            <i class="bi bi-info-circle"></i><span>Informações</span>
-          </a>
-      </td>
-      </tr>
-    </tbody>
-  </table>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nome</th>
+                <th scope="col">IP</th>
+                <th scope="col">&nbsp;</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let agv of listAGV; index as index">
+                <th scope="row">{{ agv.id }}</th>
+                <td>{{ agv.name }}</td>
+                <td>{{ agv.ip }}</td>
+                <td>
+                    <a (click)="update(agv)" class="btn">
+                        <i class="bi bi-pencil"></i><span>Alterar</span>
+                    </a>
+                    <button class="btn ml-2" (click)="exclude(index)">
+                        <i class="bi bi-eraser"></i><span>Excluir</span>
+                    </button>
+                    <a (click)="redirect(agv)" class="btn">
+                        <i class="bi bi-info-circle"></i><span>Informações</span>
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </div>

@@ -27,8 +27,8 @@ export class SidebarComponent {
     }
 
     public get menuItens(): Observable<MenuItensInterface> {
-      return this.menuService.menuItensInterfaceObserver();
-  }
+        return this.menuService.menuItensInterfaceObserver();
+    }
 
     public ngOnInit(): void {
         this.resizebledService.screenSize.subscribe((data) => {

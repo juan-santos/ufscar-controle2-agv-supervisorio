@@ -34,6 +34,6 @@ export class MenuService {
      * @param show Parametro responsável por preencher os itens de menu
      */
     public setMenuItensValue(itens: MenuItensInterface): void {
-      this.$menuItensInterfaceObserver.next(itens);
-  }
+        this.$menuItensInterfaceObserver.next(itens);
+    }
 }

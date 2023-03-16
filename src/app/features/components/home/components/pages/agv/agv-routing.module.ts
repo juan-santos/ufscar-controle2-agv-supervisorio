@@ -7,33 +7,33 @@ import { ManagementAgvComponent } from './components/management-agv/management-a
 import { NewAgvComponent } from './components/new-agv/new-agv.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: AgvComponent,
-    children: [
-      {
+    {
         path: '',
-        redirectTo: ProjectRoutes.MANAGEMENT,
-        pathMatch: 'full',
-      },
-      {
-        path: ProjectRoutes.MANAGEMENT,
-        component: ManagementAgvComponent
-      },
-      {
-        path: ProjectRoutes.NEW,
-        component: NewAgvComponent
-      },
-      {
-        path: ProjectRoutes.INFORMATION,
-        component: InformationAgvComponent
-      },
-    ]
-  }
+        component: AgvComponent,
+        children: [
+            {
+                path: '',
+                redirectTo: ProjectRoutes.MANAGEMENT,
+                pathMatch: 'full',
+            },
+            {
+                path: ProjectRoutes.MANAGEMENT,
+                component: ManagementAgvComponent,
+            },
+            {
+                path: ProjectRoutes.NEW,
+                component: NewAgvComponent,
+            },
+            {
+                path: ProjectRoutes.INFORMATION,
+                component: InformationAgvComponent,
+            },
+        ],
+    },
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+    imports: [RouterModule.forChild(routes)],
+    exports: [RouterModule],
 })
-export class AgvRoutingModule { }
+export class AgvRoutingModule {}

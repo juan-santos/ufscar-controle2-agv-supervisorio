@@ -1,19 +1,24 @@
 <div
-    *ngIf="menuObservable | async as menu" class="content_page"
-    [ngClass]="menu.showMenu ? classMobile + '__show' : classMobile + '__hide'">
+    *ngIf="menuObservable | async as menu"
+    class="content_page"
+    [ngClass]="menu.showMenu ? classMobile + '__show' : classMobile + '__hide'"
+>
     <div *ngIf="menuItens | async as itens" class="content">
-      <div>
-        <h3>{{itens.title}}</h3>
-        <hr/>
-      </div>
-      <div>
-        <ul>
-          <li *ngFor="let item of itens.listItens">
-            <a [routerLinkActive]="'active'" [routerLink]="item.link"><i [class]="item.icon"></i><span>{{item.name}}</span></a></li>
-         </ul>
-      </div>
+        <div>
+            <h3>{{ itens.title }}</h3>
+            <hr />
+        </div>
+        <div>
+            <ul>
+                <li *ngFor="let item of itens.listItens">
+                    <a [routerLinkActive]="'active'" [routerLink]="item.link"
+                        ><i [class]="item.icon"></i><span>{{ item.name }}</span></a
+                    >
+                </li>
+            </ul>
+        </div>
     </div>
-<!--
+    <!--
         <li><i class="bi bi-card-list"></i></li>
         <li><i class="bi bi-collection"></i></li>
         <li><i class="bi bi-dash-circle"></i></li>
@@ -32,6 +37,8 @@
         <li><i class="bi bi-person-circle"></i></li>
       -->
     <div *ngIf="isMobile && menu.showMenu">
-      <button class="btn" (click)="closeSidebar()"><i class="bi-x-lg" style="font-size: 3rem; color: #fff;" ></i></button>
+        <button class="btn" (click)="closeSidebar()">
+            <i class="bi-x-lg" style="font-size: 3rem; color: #fff"></i>
+        </button>
     </div>
 </div>

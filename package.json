@@ -8,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "format": "npx prettier \"src/app/**\" --write",
-    "api": "json-server --watch mock/mock.json --routes mock/routes.json --no-cors=true",
+    "api": "json-server --watch mock/mock.json --config mock/json-server.json --routes mock/routes.json --port 3000 --delay 500 --no-cors=true",
     "socket": "node ./socket/socket.js"
   },
   "private": true,

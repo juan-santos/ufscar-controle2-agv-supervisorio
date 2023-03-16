@@ -20,5 +20,8 @@
       "name": "AGV da sala 4",
       "ip": "127.0.0.1"
     }
-  ]
+  ],
+  "deleteAGV": {
+    "status": "Removido com sucesso"
+  }
 }

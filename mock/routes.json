@@ -1,3 +1,4 @@
 {
-  "/agv/list": "/listAGV"
+  "/api/agv/list": "/listAGV",
+  "/api/agv/:id": "/deleteAGV"
 }

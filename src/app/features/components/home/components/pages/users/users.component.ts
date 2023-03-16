@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ProjectRoutes } from './../../../../../../features/enum/routes.enum';
 import { MenuService } from './../../../../../../features/services/menu/menu.service';
 
 @Component({
@@ -17,12 +18,12 @@ export class UsersComponent {
             listItens: [
                 {
                     name: 'Adicionar usuário',
-                    link: '/home/users/new',
+                    link: `/${ProjectRoutes.HOME}/${ProjectRoutes.USERS}/${ProjectRoutes.NEW}`,
                     icon: 'bi bi-person-plus-fill',
                 },
                 {
                     name: 'Gerenciamento de usuários',
-                    link: '/home/users/management',
+                    link: `/${ProjectRoutes.HOME}/${ProjectRoutes.USERS}/${ProjectRoutes.MANAGEMENT}`,
                     icon: 'bi bi-person-fill-gear',
                 },
             ],

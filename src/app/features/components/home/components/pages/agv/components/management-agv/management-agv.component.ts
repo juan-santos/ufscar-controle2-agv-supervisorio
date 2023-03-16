@@ -3,6 +3,7 @@ import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 import { AgvService } from './../../../../../../../../features/services/agv/agv.service';
 import { AGV } from './../../../../../../../../features/interfaces/agv.interface';
 import { take } from 'rxjs';
+import { ProjectRoutes } from './../../../../../../../../features/enum/routes.enum';
 
 @Component({
     selector: 'app-management-agv',
@@ -65,7 +66,7 @@ export class ManagementAgvComponent implements OnInit {
             queryParams: agv,
         };
 
-        this.router.navigate(['/home/agv/new'], navigationExtras);
+        this.router.navigate([`/${ProjectRoutes.HOME}/${ProjectRoutes.AGV}/${ProjectRoutes.NEW}`], navigationExtras);
     }
 
     /**
@@ -77,6 +78,6 @@ export class ManagementAgvComponent implements OnInit {
             queryParams: agv,
         };
 
-        this.router.navigate(['/home/agv/info'], navigationExtras);
+        this.router.navigate([`/${ProjectRoutes.HOME}/${ProjectRoutes.AGV}/${ProjectRoutes.INFORMATION}`], navigationExtras);
     }
 }

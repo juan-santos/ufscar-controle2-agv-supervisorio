@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 import { take } from 'rxjs';
+import { ProjectRoutes } from './../../../../../../../../features/enum/routes.enum';
 import { User } from 'src/app/features/interfaces/user.interface';
 import { UserService } from './../../../../../../../../features/services/user/user-service.service';
 
@@ -64,7 +65,7 @@ export class NewUserComponent {
                       text: 'Usuário alterado com sucesso',
                   },
               };
-              this.router.navigate(['/home/users/management'], navigationExtras);
+              this.router.navigate([`/${ProjectRoutes.HOME}/${ProjectRoutes.USERS}/${ProjectRoutes.MANAGEMENT}`], navigationExtras);
           });
   }
 
@@ -81,7 +82,7 @@ export class NewUserComponent {
                       text: 'Usuário cadastrado com sucesso',
                   },
               };
-              this.router.navigate(['/home/users/management'], navigationExtras);
+              this.router.navigate([`/${ProjectRoutes.HOME}/${ProjectRoutes.USERS}/${ProjectRoutes.MANAGEMENT}`], navigationExtras);
           });
   }
 }

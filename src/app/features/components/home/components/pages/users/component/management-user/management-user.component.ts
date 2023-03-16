@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 import { take } from 'rxjs';
+import { ProjectRoutes } from './../../../../../../../../features/enum/routes.enum';
 import { User } from './../../../../../../../../features/interfaces/user.interface';
 import { UserService } from './../../../../../../../../features/services/user/user-service.service';
 
@@ -65,6 +66,6 @@ export class ManagementUserComponent {
             queryParams: user,
         };
 
-        this.router.navigate(['/home/users/new'], navigationExtras);
+        this.router.navigate([`/${ProjectRoutes.HOME}/${ProjectRoutes.USERS}/${ProjectRoutes.NEW}`], navigationExtras);
     }
 }

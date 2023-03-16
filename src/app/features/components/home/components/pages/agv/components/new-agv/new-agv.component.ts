@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 import { take } from 'rxjs';
+import { ProjectRoutes } from './../../../../../../../../features/enum/routes.enum';
 import { AGV } from 'src/app/features/interfaces/agv.interface';
-import { AgvService } from 'src/app/features/services/agv/agv.service';
+import { AgvService } from './../../../../../../../../features/services/agv/agv.service';
 
 @Component({
     selector: 'app-new-agv',
@@ -64,7 +65,7 @@ export class NewAgvComponent implements OnInit {
                         text: 'AGV alterado com sucesso',
                     },
                 };
-                this.router.navigate(['/home/agv/management'], navigationExtras);
+                this.router.navigate([`/${ProjectRoutes.HOME}/${ProjectRoutes.AGV}/${ProjectRoutes.MANAGEMENT}`], navigationExtras);
             });
     }
 
@@ -81,7 +82,7 @@ export class NewAgvComponent implements OnInit {
                         text: 'AGV cadastrado com sucesso',
                     },
                 };
-                this.router.navigate(['/home/agv/management'], navigationExtras);
+                this.router.navigate([`/${ProjectRoutes.HOME}/${ProjectRoutes.AGV}/${ProjectRoutes.MANAGEMENT}`], navigationExtras);
             });
     }
 }

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ProjectRoutes } from './../../../../../../features/enum/routes.enum';
 import { MenuService } from './../../../../../../features/services/menu/menu.service';
 
 @Component({
@@ -17,12 +18,12 @@ export class AgvComponent {
             listItens: [
                 {
                     name: 'Adicionar AGV',
-                    link: '/home/agv/new',
+                    link:`/${ProjectRoutes.HOME}/${ProjectRoutes.AGV}/${ProjectRoutes.NEW}`,
                     icon: 'bi bi-plus',
                 },
                 {
                     name: 'Gerenciamento de AGV',
-                    link: '/home/agv/management',
+                    link: `/${ProjectRoutes.HOME}/${ProjectRoutes.AGV}/${ProjectRoutes.MANAGEMENT}`,
                     icon: 'bi bi-gear-fill',
                 },
             ],

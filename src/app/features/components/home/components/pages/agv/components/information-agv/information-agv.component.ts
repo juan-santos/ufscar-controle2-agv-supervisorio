@@ -5,6 +5,7 @@ import { Subscription, take } from 'rxjs';
 import { SocketService } from './../../../../../../../../features/services/socket/socket.service';
 import { STATE_AGV } from './../../../../../../../../features/enum/state.enum';
 import { AGV } from './../../../../../../../../features/interfaces/agv.interface';
+import { ProjectRoutes } from './../../../../../../../../features/enum/routes.enum';
 
 @Component({
     selector: 'app-information-agv',
@@ -134,7 +135,7 @@ export class InformationAgvComponent implements OnInit, AfterViewInit, OnDestroy
             if (data) {
                 this.agvInfo = data as AGV;
             } else {
-                this.router.navigate(['/home/agv']);
+                this.router.navigate([`/${ProjectRoutes.HOME}/${ProjectRoutes.AGV}`]);
             }
         });
     }

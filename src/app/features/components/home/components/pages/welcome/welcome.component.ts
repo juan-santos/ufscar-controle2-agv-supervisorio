@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ProjectRoutes } from './../../../../../../features/enum/routes.enum';
 import { MenuService } from './../../../../../../features/services/menu/menu.service';
 
 @Component({
@@ -17,12 +18,12 @@ export class WelcomeComponent {
             listItens: [
                 {
                     name: 'AGVs',
-                    link: '/home/agv',
+                    link: `/${ProjectRoutes.HOME}/${ProjectRoutes.AGV}`,
                     icon: 'bi bi-car-front',
                 },
                 {
                     name: 'Usuários',
-                    link: '/home/users',
+                    link: `/${ProjectRoutes.HOME}/${ProjectRoutes.USERS}`,
                     icon: 'bi bi-person-circle',
                 },
             ],

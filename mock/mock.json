@@ -33,5 +33,39 @@
     "id": 1,
     "email": "email@email.com",
     "name": "João da Silva"
+  },
+  "getUser": {
+    "id": 1,
+    "name": "João da Silva",
+    "email": "joão@joão.com"
+  },
+  "listUser": [
+    {
+      "id": 1,
+      "name": "João da Silva",
+      "email": "joao@joao.com"
+    },
+    {
+      "id": 2,
+      "name": "Maria Oliveira",
+      "email": "maria@maria.com"
+    },
+    {
+      "id": 3,
+      "name": "José Maria",
+      "email": "jose@maria.com"
+    },
+    {
+      "id": 4,
+      "name": "Juliana Almeida",
+      "email": "Juliana@almeida.com"
+    },{
+      "id": 5,
+      "name": "João Eduardo",
+      "email": "joao@eduardo.com"
+    }
+  ],
+  "deleteUser": {
+
   }
 }

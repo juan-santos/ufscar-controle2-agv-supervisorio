@@ -2,5 +2,10 @@
   "/api/agv": "/getAGV",
   "/api/agv/list": "/listAGV",
   "/api/agv/:id": "/deleteAGV",
-  "/api/login": "/login"
+
+  "/api/login": "/login",
+
+  "/api/user": "/getUser",
+  "/api/user/list": "/listUser",
+  "/api/user/:id": "/deleteUser"
 }

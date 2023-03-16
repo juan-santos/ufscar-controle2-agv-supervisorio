@@ -18,6 +18,7 @@ export class NewUserComponent {
   public formCliente: FormGroup = this.formBuilder.group({
       name: [null, [Validators.required, Validators.minLength(5)]],
       email: [null, [Validators.required, Validators.email]],
+      password: [null, [Validators.required]],
   });
 
   /**

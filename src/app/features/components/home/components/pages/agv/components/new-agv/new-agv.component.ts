@@ -19,6 +19,13 @@ export class NewAgvComponent implements OnInit {
         ip: [null, [Validators.required, Validators.minLength(9)]],
     });
 
+    /**
+     *
+     * @param formBuilder FormBuilder
+     * @param activatedRoute ActivatedRoute
+     * @param router Router
+     * @param agvService AgvService
+     */
     constructor(
         private readonly formBuilder: FormBuilder,
         private activatedRoute: ActivatedRoute,
@@ -44,6 +51,9 @@ export class NewAgvComponent implements OnInit {
         });
     }
 
+    /**
+     * save
+     */
     public save(): void {
         this.agvService
             .saveAGV(this.formCliente.value)
@@ -58,6 +68,9 @@ export class NewAgvComponent implements OnInit {
             });
     }
 
+    /**
+     * newAGV
+     */
     public newAGV(): void {
         this.agvService
             .createAGV(this.formCliente.value)

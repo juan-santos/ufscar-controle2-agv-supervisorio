@@ -16,20 +16,30 @@ export class SidebarComponent {
     /**
      *
      * @param menuService Serviço responsável por gerenciar a exibição do menu
+     * @param resizebledService ResizebledService
      */
     constructor(
         private readonly menuService: MenuService,
         private readonly resizebledService: ResizebledService
     ) {}
 
+    /**
+     * menuObservable
+     */
     public get menuObservable(): Observable<MenuInterface> {
         return this.menuService.hideMenuObserver();
     }
 
+    /**
+     * menuItens
+     */
     public get menuItens(): Observable<MenuItensInterface> {
         return this.menuService.menuItensInterfaceObserver();
     }
 
+    /**
+     * ngOnInit
+     */
     public ngOnInit(): void {
         this.resizebledService.screenSize.subscribe((data) => {
             this.isMobile = this.resizebledService.isMobile(data);
@@ -39,6 +49,9 @@ export class SidebarComponent {
         });
     }
 
+    /**
+     * closeSidebar
+     */
     public closeSidebar(): void {
         this.menuService.setMenuValue();
     }

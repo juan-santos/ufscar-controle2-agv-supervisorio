@@ -12,6 +12,11 @@ import { ResizebledService } from '../../shared/resizebled/service/resizebled/re
 export class HomeComponent extends ResizebledComponent implements AfterViewInit, OnDestroy {
     private _observable: Subscription;
 
+    /**
+     *
+     * @param resizebledService ResizebledService
+     * @param _ngZone NgZone
+     */
     constructor(
         private readonly resizebledService: ResizebledService,
         protected readonly _ngZone: NgZone

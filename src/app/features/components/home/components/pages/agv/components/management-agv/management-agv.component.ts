@@ -13,6 +13,7 @@ export class ManagementAgvComponent implements OnInit {
     /**
      *
      * @param router Router
+     * @param activatedRoute ActivatedRoute
      * @param agvService AgvService
      */
     constructor(

@@ -11,19 +11,33 @@ import { MenuInterface, MenuService } from './../../../../services/menu/menu.ser
 export class HeaderComponent implements OnInit {
     public isMobile = false;
 
+    /**
+     *
+     * @param menuService MenuService
+     * @param resizebledService ResizebledService
+     */
     constructor(
         private readonly menuService: MenuService,
         private readonly resizebledService: ResizebledService
     ) {}
 
+    /**
+     * menuObservable
+     */
     public get menuObservable(): Observable<MenuInterface> {
         return this.menuService.hideMenuObserver();
     }
 
+    /**
+     * hideSidebar
+     */
     public hideSidebar(): void {
         this.menuService.setMenuValue();
     }
 
+    /**
+     * ngOnInit
+     */
     public ngOnInit(): void {
         this.resizebledService.screenSize.subscribe((data) => {
             this.isMobile = this.resizebledService.isMobile(data);
